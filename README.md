@@ -40,6 +40,12 @@ La base de datos PostgreSQL se ejecuta utilizando Docker únicamente
 como motor de base de datos.
 
 PASO 1: LEVANTAR BASE DE DATOS
+
+El sistema permite DOS FORMAS para levantar la base de datos,
+dependiendo del entorno de ejecución deseado.
+
+OPCIÓN A: BASE DE DATOS CON DOCKER (POSTGRESQL - RECOMENDADO)
+
 Desde la raíz del proyecto ejecutar:
 
 docker compose up -d db
@@ -49,6 +55,26 @@ Credenciales de la base de datos:
 - Usuario: postgres
 - Contraseña: postgres
 - Puerto: 5432
+
+Esta opción utiliza PostgreSQL ejecutándose en un contenedor Docker
+y es la recomendada para mantener consistencia con el entorno de despliegue.
+
+--------------------------------------------------
+
+OPCIÓN B: BASE DE DATOS EN MEMORIA (H2 - MODO LOCAL)
+
+Al ejecutar el backend con Maven, el sistema puede funcionar utilizando
+una base de datos en memoria H2 para pruebas locales rápidas.
+
+Para ejecutar el backend con Maven:
+
+mvn spring-boot:run
+
+En este modo no es necesario levantar PostgreSQL,
+ya que la base de datos se crea automáticamente en memoria.
+
+Esta opción está pensada únicamente para desarrollo local
+y pruebas rápidas del sistema.
 
 PASO 2: EJECUTAR BACKEND
 Desde la carpeta api ejecutar:
