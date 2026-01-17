@@ -1,0 +1,241 @@
+{
+  "info": {
+    "_postman_id": "4ab4be4d-0b25-4d08-9770-efb2b4a9eaea",
+    "name": "Banco API – Xavier Aguilar",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "28415622"
+  },
+  "item": [
+    {
+      "name": "Agregar Clientes",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "/*{\r\n  \"nombre\": \"Jose Lema\",\r\n  \"genero\": \"M\",\r\n  \"edad\": 30,\r\n  \"identificacion\": \"0912345678\",\r\n  \"direccion\": \"Otavalo sn y principal\",\r\n  \"telefono\": \"098254785\",\r\n  \"contrasena\": \"1234\",\r\n  \"estado\": true\r\n}*/\r\n\r\n/*{\r\n  \"nombre\": \"Marianela Montalvo\",\r\n  \"genero\": \"F\",\r\n  \"edad\": 28,\r\n  \"identificacion\": \"097548965\",\r\n  \"direccion\": \"Amazonas y NNUU\",\r\n  \"telefono\": \"097548965\",\r\n  \"contrasena\": \"5678\",\r\n  \"estado\": true\r\n}*/\r\n\r\n/*{\r\n  \"nombre\": \"Juan Osorio\",\r\n  \"genero\": \"M\",\r\n  \"edad\": 35,\r\n  \"identificacion\": \"098874587\",\r\n  \"direccion\": \"13 junio y Equinoccial\",\r\n  \"telefono\": \"098874587\",\r\n  \"contrasena\": \"1245\",\r\n  \"estado\": true\r\n}*/\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Clientes",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar Cuentas",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "/*{\r\n  \"numeroCuenta\": \"478758\",\r\n  \"tipoCuenta\": \"Ahorros\",\r\n  \"saldoInicial\": 2000,\r\n  \"estado\": true,\r\n  \"cliente\": { \"id\": 7 }\r\n}*/\r\n\r\n/*{\r\n  \"numeroCuenta\": \"225487\",\r\n  \"tipoCuenta\": \"Corriente\",\r\n  \"saldoInicial\": 100,\r\n  \"estado\": true,\r\n  \"cliente\": { \"id\": 8 }\r\n}*/\r\n\r\n/*{\r\n  \"numeroCuenta\": \"495878\",\r\n  \"tipoCuenta\": \"Ahorros\",\r\n  \"saldoInicial\": 0,\r\n  \"estado\": true,\r\n  \"cliente\": { \"id\": 9 }\r\n}*/\r\n\r\n/*{\r\n  \"numeroCuenta\": \"496825\",\r\n  \"tipoCuenta\": \"Ahorros\",\r\n  \"saldoInicial\": 540,\r\n  \"estado\": true,\r\n  \"cliente\": { \"id\": 8 }\r\n}*/\r\n\r\n{\r\n  \"numeroCuenta\": \"585545\",\r\n  \"tipoCuenta\": \"Corriente\",\r\n  \"saldoInicial\": 1000,\r\n  \"estado\": true,\r\n  \"cliente\": { \"id\": 7 }\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/cuentas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cuentas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Cuentas",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/cuentas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cuentas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar Movimientos",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "/*{\r\n  \"cuenta\": { \"id\": 6 },\r\n  \"valor\": -575\r\n}*/\r\n\r\n/*{\r\n  \"cuenta\": { \"id\": 7 },\r\n  \"valor\": 600\r\n}*/\r\n\r\n/*{\r\n  \"cuenta\": { \"id\": 8 },\r\n  \"valor\": 150\r\n}*/\r\n\r\n{\r\n  \"cuenta\": { \"id\": 9 },\r\n  \"valor\": -540\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/movimientos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "movimientos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reporte por Fechas",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/reportes?clienteId=8&fechaInicio=2026-01-01&fechaFin=2026-12-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "reportes"
+          ],
+          "query": [
+            {
+              "key": "clienteId",
+              "value": "8"
+            },
+            {
+              "key": "fechaInicio",
+              "value": "2026-01-01"
+            },
+            {
+              "key": "fechaFin",
+              "value": "2026-12-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Movimientos",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/movimientos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "movimientos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Movimiento por cuentas",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/movimientos?cuentaId=7\n",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "movimientos"
+          ],
+          "query": [
+            {
+              "key": "cuentaId",
+              "value": "7\n"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
