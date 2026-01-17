@@ -1,0 +1,21 @@
+# Java / Maven
+api/target/
+*.log
+
+# Node / Vite
+banco-front/node_modules/
+banco-front/dist/
+banco-front/.env
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Bases de datos locales
+api/data/
+*.mv.db

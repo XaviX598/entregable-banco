@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: banco
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - banco_db:/var/lib/postgresql/data
+
+  backend:
+    image: docker.io/xavix598/banco-backend:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: banco
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      SPRING_PROFILES_ACTIVE: prod
+
+  frontend:
+    image: docker.io/xavix598/banco-frontend:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  banco_db:

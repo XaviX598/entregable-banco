@@ -1,0 +1,382 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --yellow: #facc15;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.app-shell {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 56px 1fr;
+}
+
+.topbar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.topbar .logo {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  height: 100%;
+}
+
+.sidebar {
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  padding: 16px 0;
+}
+
+.nav-item {
+  padding: 10px 18px;
+  color: #374151;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+}
+
+.nav-item:hover {
+  background: #f9fafb;
+}
+
+.nav-item.active {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.content {
+  padding: 18px 22px;
+}
+
+.app-shell,
+.main,
+.content {
+  width: 100%;
+}
+
+.app-layout {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1;
+}
+
+.page-title {
+  font-size: 22px;
+  margin: 6px 0 14px;
+  font-weight: 700;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.toolbar .search {
+  flex: 1;
+  min-width: 220px;
+  max-width: 320px;
+}
+
+
+.search {
+  width: 220px;
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0 10px;
+  outline: none;
+  background: #fff;
+  font-size: 13px;
+  color: #000000;
+}
+
+.search:focus {
+  border-color: #cbd5e1;
+}
+
+.search::placeholder {
+  color: #6b7280;
+}
+
+.search option {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.btn-new {
+  background: var(--yellow);
+  border: 1px solid #eab308;
+  color: #000000;
+  border-radius: 2px;
+  padding: 7px 14px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.btn-new:hover {
+  filter: brightness(0.98);
+}
+
+.footer {
+  margin-top: auto;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+}
+
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  height: 38px;
+  text-align: left;
+  padding: 0 12px;
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+.table tbody td {
+  height: 38px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: #111827;
+}
+
+.table tbody tr:hover {
+  background: #fafafa;
+}
+
+.actions button {
+  margin-right: 8px;
+  height: 28px;
+  padding: 0 12px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.actions button:hover {
+  background: #f9fafb;
+}
+
+.btn-danger {
+  border-color: #fecaca !important;
+  background: #fff5f5 !important;
+  color: #991b1b !important;
+}
+
+.form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 16px;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.form-field input,
+.form-field select {
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0 10px;
+  outline: none;
+  background: #fff;
+  font-size: 13px;
+  color: #111827;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #cbd5e1;
+}
+
+.form-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 1px solid #111827;
+  background: #111827;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: #111827;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, .45);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 16px;
+  z-index: 9999;
+}
+
+.modal {
+  width: min(900px, 100%);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  color: #111827;
+}
+
+.modal-body {
+  padding: 16px;
+}
+
+.card-mini {
+  border: 1px solid #e5e7eb;
+  background: white;
+  border-radius: 10px;
+  padding: 12px 14px;
+  min-width: 200px;
+}
+
+.card-mini .label {
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.card-mini .value {
+  font-size: 18px;
+  font-weight: 700;
+}
